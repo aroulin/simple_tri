@@ -7,15 +7,15 @@
 #include "gpu.h"
 #include "vshader_shbin.h"
 
-#define CLEAR_COLOR 0x68B0D8FF
+#define CLEAR_COLOR 0x0
 
 typedef struct { float x, y, z; } vertex;
 
 static const vertex vertex_list[] =
 {
-	{ 128.0f, 7.0f, 0.5f },
-	{ 64.0f, 5.0f, 0.5f },
-	{ 256.0f, 5.0f, 0.5f },
+	{ 128.0f, 128.0f, 0.5f },
+	{ 64.0f, 32.0f, 0.5f },
+	{ 256.0f, 32.0f, 0.5f },
 };
 
 #define vertex_list_count (sizeof(vertex_list)/sizeof(vertex_list[0]))

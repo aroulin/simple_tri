@@ -4,7 +4,7 @@
 .fvec projection[4]
 
 ; Constants
-.constf myconst(0.0, 1.0, -1.0, -0.5)
+.constf myconst(0, 1, -2, -100)
 .alias  zeros myconst.xxxx ; Vector full of zeros
 .alias  ones  myconst.yyyy ; Vector full of ones
 
@@ -18,7 +18,6 @@
 .proc main
 	; Force the w component of inpos to be 1.0
 	mov r0.xyz, inpos.xyz
-	ex2 r0.y, r0
 	mov r0.w,   ones
 
 	; outpos = projectionMatrix * inpos
@@ -28,7 +27,10 @@
 	dp4 outpos.w, projection[3], r0
 
 	; outclr = solid white color
-	mov outclr, ones
+	mov r0.xyz, zeros
+	mov r0.w, ones
+	ex2 r0.y, r0
+	mov outclr, r0
 
 	; We're finished
 	end
