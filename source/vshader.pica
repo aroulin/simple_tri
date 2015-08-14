@@ -26,7 +26,7 @@
 	dp4 outpos.z, projection[2], r0
 	dp4 outpos.w, projection[3], r0
 
-	; outclr = solid white color
+	; outclr = solid green color
 	mov r0.xyz, zeros
 	mov r0.w, ones
 	ex2 r0.y, r0
